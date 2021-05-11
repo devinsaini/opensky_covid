@@ -32,3 +32,7 @@ for fname in opensky_files:
 # JHU Enigma COVID-19 data
 r = requests.get("https://covid19-lake.s3.us-east-2.amazonaws.com/enigma-jhu-timeseries/json/part-00000-23918a9c-a8b0-410e-a9d3-5772361fe925-c000.json", allow_redirects=True)
 open(f'data/jhu_enigma/part-00000-23918a9c-a8b0-410e-a9d3-5772361fe925-c000.json', 'wb').write(r.content)
+
+# download country IBAN data
+r = requests.get("https://datahub.io/core/country-list/r/data.json", allow_redirects=True)
+open(f'data/iban.json', 'wb').write(r.content)
